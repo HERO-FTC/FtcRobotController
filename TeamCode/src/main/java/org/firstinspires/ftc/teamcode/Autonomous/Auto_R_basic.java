@@ -25,17 +25,17 @@ public class Auto_R_basic extends LinearOpMode {
 
         //move forward 16 in
         Trajectory traj1 = drive.trajectoryBuilder(new Pose2d())
-                .forward(16)
+                .forward(21)
                 .build();
 
         //move right while maintaining same heading for 8 in
         Trajectory traj2 = drive.trajectoryBuilder(traj1.end())
-                .strafeRight(8)
+                .strafeRight(12)
                 .build();
 
         //move forward 26 in
         Trajectory traj3 = drive.trajectoryBuilder(traj2.end())
-                .forward(26)
+                .forward(30)
                 .build();
 
         //move left while maintaining same heading for 8 in
@@ -45,39 +45,42 @@ public class Auto_R_basic extends LinearOpMode {
 
         //move back for 50 in
         Trajectory traj5 = drive.trajectoryBuilder(traj4.end())
-                .back(50)
+                .back(40)
                 .build();
 
         //move forward for 54 in
         Trajectory traj6 = drive.trajectoryBuilder(traj5.end())
-                .forward(50)
+                .forward(45)
                 .build();
 
         //move left while maintaining same heading for 10 in
         Trajectory traj7 = drive.trajectoryBuilder(traj6.end())
-                .strafeRight(14)
+                .strafeRight(13)
                 .build();
 
         //move back for 50 in
         Trajectory traj8 = drive.trajectoryBuilder(traj7.end())
-                .back(52)
+                .back(41)
                 .build();
 
         //Move forward 52
         Trajectory traj9 = drive.trajectoryBuilder(traj8.end())
-                .forward(50)
+                .forward(41)
                 .build();
 
         //Move left 7
         Trajectory traj10 = drive.trajectoryBuilder(traj9.end())
-                .strafeRight(11)
+                .strafeRight(9)
                 .build();
 
         //move back 45
         Trajectory traj11 = drive.trajectoryBuilder(traj10.end())
-                .back(45)
+                .back(41)
                 .build();
+
         waitForStart();
+
+        drive.setMotorPowers(0.8, 0.8, 0.8, 0.8);
 
         drive.followTrajectory(traj1);
         drive.followTrajectory(traj2);

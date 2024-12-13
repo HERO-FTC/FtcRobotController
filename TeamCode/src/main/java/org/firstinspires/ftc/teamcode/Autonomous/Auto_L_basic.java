@@ -23,49 +23,49 @@ public class Auto_L_basic extends LinearOpMode {
 
         telemetry = new MultipleTelemetry(telemetry, FtcDashboard.getInstance().getTelemetry());
 
-        //move forward 16 in
-        Trajectory traj1 = drive.trajectoryBuilder(new Pose2d())
-                .forward(16)
+        //move forward 48 in
+        Trajectory traj3 = drive.trajectoryBuilder(new Pose2d())
+                .forward(47)
                 .build();
 
-        //move right while maintaining same heading for 8 in
-        Trajectory traj2 = drive.trajectoryBuilder(traj1.end())
-                .strafeLeft(8)
-                .build();
+//        //move right while maintaining same heading for 8 in
+//        Trajectory traj2 = drive.trajectoryBuilder(traj1.end())
+//                .strafeLeft(8)
+//                .build();
+//
+//        //move forward 26 in
+//        Trajectory traj3 = drive.trajectoryBuilder(traj2.end())
+//                .forward(26)
+//                .build();
 
-        //move forward 26 in
-        Trajectory traj3 = drive.trajectoryBuilder(traj2.end())
-                .forward(26)
-                .build();
-
-        //move left while maintaining same heading for 8 in
+        //move left while maintaining same heading for 13 in
         Trajectory traj4 = drive.trajectoryBuilder(traj3.end())
-                .strafeLeft(11)
+                .strafeLeft(13)
                 .build();
 
         //move back for 50 in
         Trajectory traj5 = drive.trajectoryBuilder(traj4.end())
-                .back(50)
+                .back(48)
                 .build();
 
-        //move forward for 54 in
+        //move forward for 48 in
         Trajectory traj6 = drive.trajectoryBuilder(traj5.end())
-                .forward(50)
+                .forward(45)
                 .build();
 
-        //move left while maintaining same heading for 10 in
+        //move left while maintaining same heading for 14 in
         Trajectory traj7 = drive.trajectoryBuilder(traj6.end())
-                .strafeLeft(12)
+                .strafeLeft(13)
                 .build();
 
         //move back for 50 in
         Trajectory traj8 = drive.trajectoryBuilder(traj7.end())
-                .back(52)
+                .back(46)
                 .build();
 
         //Move forward 52
         Trajectory traj9 = drive.trajectoryBuilder(traj8.end())
-                .forward(50)
+                .forward(46)
                 .build();
 
         //Move left 7
@@ -75,12 +75,19 @@ public class Auto_L_basic extends LinearOpMode {
 
         //move back 45
         Trajectory traj11 = drive.trajectoryBuilder(traj10.end())
-                .back(45)
+                .back(41)
                 .build();
+
+//        Trajectory traj12 = drive.trajectoryBuilder(new Pose2d(0,0,0))
+//                .back(100)
+//                .build();
+
         waitForStart();
 
-        drive.followTrajectory(traj1);
-        drive.followTrajectory(traj2);
+        drive.setMotorPowers(0.8, 0.8, 0.8, 0.8);
+
+//        drive.followTrajectory(traj1);
+//        drive.followTrajectory(traj2);
         drive.followTrajectory(traj3);
         drive.followTrajectory(traj4);
         drive.followTrajectory(traj5);
@@ -90,6 +97,10 @@ public class Auto_L_basic extends LinearOpMode {
         drive.followTrajectory(traj9);
         drive.followTrajectory(traj10);
         drive.followTrajectory(traj11);
+
+//        drive.turn(Math.toRadians(90));
+//
+//        drive.followTrajectory(traj12);
 
 
         telemetry.clearAll();
