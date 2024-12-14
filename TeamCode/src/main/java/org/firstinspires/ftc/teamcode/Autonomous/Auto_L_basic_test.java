@@ -13,7 +13,7 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 
 
 @Autonomous
-//@Disabled
+@Disabled
 public class Auto_L_basic_test extends LinearOpMode {
     static final double FEET_PER_METER = 3.28084;
     @Override
@@ -78,9 +78,10 @@ public class Auto_L_basic_test extends LinearOpMode {
                 .back(10)
                 .build();
 
-//        Trajectory traj12 = drive.trajectoryBuilder(new Pose2d(0,0,0))
-//                .back(20)
-//                .build();
+        Trajectory traj12 = drive.trajectoryBuilder(traj11.end().plus(
+                new Pose2d(0, 0, Math.toRadians(245))), false)
+                .forward(20)
+                .build();
 
         waitForStart();
 
@@ -98,9 +99,9 @@ public class Auto_L_basic_test extends LinearOpMode {
 //        drive.followTrajectory(traj10);
         drive.followTrajectory(traj11);
 
-        drive.turn(Math.toRadians(90));
+        //drive.turn(Math.toRadians(270));
 
-        //drive.followTrajectory(traj12);
+        drive.followTrajectory(traj12);
 
 
         telemetry.clearAll();

@@ -222,7 +222,7 @@ public class IntoTheTeleOp extends LinearOpMode {
 
             // a/b on gamepad 2 -- setting power for claw (CR servo)
             if (gamepad2.a) { // to open
-                claw.setPosition(0.9);
+                claw.setPosition(0.95);
             } else if (gamepad2.b) { // to close
                 claw.setPosition(0.7);
             }
@@ -240,7 +240,7 @@ public class IntoTheTeleOp extends LinearOpMode {
 
 //             bumpers on gamepad 2 -- setting position of spheal (position servo)
             if (gamepad2.left_bumper) { // untuck
-                spheal.setPower(0.5); // used to be 0.5
+                spheal.setPower(0.4); // used to be 0.5
             } else if (gamepad2.right_bumper) { // tuck
                 spheal.setPower(-0.5); //try 0.9
             } else {
