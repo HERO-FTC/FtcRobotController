@@ -88,10 +88,10 @@ public class In2TheTeleOp extends LinearOpMode {
     private DcMotor leftBackDrive = null;
     private DcMotor rightFrontDrive = null;
     private DcMotor rightBackDrive = null;
-
-    private Servo claw = null;
-    private CRServo spin = null;
-    private CRServo spheal = null;
+//
+//    private Servo claw = null;
+//    private CRServo spin = null;
+//    private CRServo spheal = null;
 
 
     @Override
@@ -104,12 +104,12 @@ public class In2TheTeleOp extends LinearOpMode {
         rightBackDrive = hardwareMap.get(DcMotor.class, "right_back_drive");
 
 
-        claw = hardwareMap.get(Servo.class, "claw");
-        //servoController = claw.getController();
-
-
-        spin = hardwareMap.get(CRServo.class, "spin");
-        spheal = hardwareMap.get(CRServo.class, "spheal");
+//        claw = hardwareMap.get(Servo.class, "claw");
+//        //servoController = claw.getController();
+//
+//
+//        spin = hardwareMap.get(CRServo.class, "spin");
+//        spheal = hardwareMap.get(CRServo.class, "spheal");
 
 
 
@@ -125,7 +125,7 @@ public class In2TheTeleOp extends LinearOpMode {
         // Keep testing until ALL the wheels move the robot forward when you push the left joystick forward.
         leftFrontDrive.setDirection(DcMotor.Direction.REVERSE);
         leftBackDrive.setDirection(DcMotor.Direction.REVERSE);
-        rightFrontDrive.setDirection(DcMotor.Direction.FORWARD);
+        rightFrontDrive.setDirection(DcMotor.Direction.REVERSE);
         rightBackDrive.setDirection(DcMotor.Direction.FORWARD);
 
 
@@ -181,35 +181,35 @@ public class In2TheTeleOp extends LinearOpMode {
             // ... does not require code, take default values which are fastest
 
 
-
-
-            // a/b on gamepad 2 -- setting power for claw (CR servo)
-            if (gamepad2.a) { // to open
-                claw.setPosition(0.95);
-            } else if (gamepad2.b) { // to close
-                claw.setPosition(0.7);
-            }
-//            else {
-//                claw.setPosition(0.875); // to test if power is off to claw
+//
+//
+//            // a/b on gamepad 2 -- setting power for claw (CR servo)
+//            if (gamepad2.a) { // to open
+//                claw.setPosition(0.95);
+//            } else if (gamepad2.b) { // to close
+//                claw.setPosition(0.7);
 //            }
-
-            if (gamepad2.x) {
-                spin.setPower(-0.5);
-            } else if (gamepad2.y) {
-                spin.setPower(0.5);
-            } else {
-                spin.setPower(0);
-            }
-
-//             bumpers on gamepad 2 -- setting position of spheal (position servo)
-            if (gamepad2.left_bumper) { // untuck
-                spheal.setPower(0.4); // used to be 0.5
-            } else if (gamepad2.right_bumper) { // tuck
-                spheal.setPower(-0.5); //try 0.9
-            } else {
-                spheal.setPower(0);
-            }
-
+////            else {
+////                claw.setPosition(0.875); // to test if power is off to claw
+////            }
+//
+//            if (gamepad2.x) {
+//                spin.setPower(-0.5);
+//            } else if (gamepad2.y) {
+//                spin.setPower(0.5);
+//            } else {
+//                spin.setPower(0);
+//            }
+//
+////             bumpers on gamepad 2 -- setting position of spheal (position servo)
+//            if (gamepad2.left_bumper) { // untuck
+//                spheal.setPower(0.4); // used to be 0.5
+//            } else if (gamepad2.right_bumper) { // tuck
+//                spheal.setPower(-0.5); //try 0.9
+//            } else {
+//                spheal.setPower(0);
+//            }
+//
 
 
 
