@@ -13,7 +13,7 @@ import org.firstinspires.ftc.teamcode.trajectorysequence.TrajectorySequence;
 
 
 @Autonomous
-//@Disabled
+@Disabled
 public class Auto_L_basic extends LinearOpMode {
     static final double FEET_PER_METER = 3.28084;
     @Override
